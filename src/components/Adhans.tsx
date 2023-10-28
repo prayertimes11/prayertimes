@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Table } from "antd";
 import { useEffect, useState } from "react";
 import { getAzanTimes } from "../api";
 import moment from "moment";
-
-const { Column } = Table;
 
 type prayerType = {
   name: string;
@@ -12,6 +11,10 @@ type prayerType = {
 };
 
 const Adhans = () => {
+  const sharedOnCell = () => {
+    return {};
+  };
+
   const address = "Richardson Dallas Texas ,USA";
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [prayerTimes, setPrayerTimes] = useState<any>(null);
@@ -29,9 +32,35 @@ const Adhans = () => {
     console.log(prayerTimes);
   }, []);
 
+  const columns = [
+    {
+      title: "Prayer",
+      dataIndex: "name",
+      onCell: sharedOnCell,
+    },
+    {
+      title: "Begins",
+      dataIndex: "begins",
+      onCell: (_: any, index: number) => {
+        if (index === 1) {
+          return { colSpan: 2 };
+        }
+        if (index === 6) {
+          return { colSpan: 2 };
+        }
+
+        return {};
+      },
+    },
+    {
+      title: "Iqamah",
+      dataIndex: "iqamah",
+      onCell: sharedOnCell,
+    },
+  ];
+
   useEffect(() => {
     if (prayerTimes !== null) {
-      console.log(prayerTimes);
       setPrayerData([
         {
           name: "Fajr",
@@ -64,7 +93,11 @@ const Adhans = () => {
           begins: moment(prayerTimes.Isha, ["HH:mm"]).format("hh:mm A"),
           iqamah: "08:30 PM",
         },
-        { name: "Jumuah", begins: "02:00 PM", iqamah: "" },
+        {
+          name: "Jumuah",
+          begins: "02:00 PM",
+          iqamah: "",
+        },
       ]);
     }
   }, [prayerTimes]);
@@ -72,11 +105,11 @@ const Adhans = () => {
   return (
     <div className="adhans">
       {prayerData.length > 0 ? (
-        <Table dataSource={prayerData} pagination={false}>
-          <Column title="Prayer" dataIndex="name" key="name" />
-          <Column title="Begins" dataIndex="begins" key="begins" />
-          <Column title="Iqamah" dataIndex="iqamah" key="iqamah" />
-        </Table>
+        <Table
+          dataSource={prayerData}
+          pagination={false}
+          columns={columns as any}
+        />
       ) : (
         <></>
       )}

@@ -31,9 +31,10 @@
 }
 
 th {
-  background-color: #0d1621 !important;
-  color: white !important;
-  font-size: 2.9rem !important;
+  color: #0d1621 !important;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 3rem !important;
 }
 
 .td {
@@ -41,5 +42,13 @@ th {
 }
 
 .ant-table-tbody {
-  font-size: 2.9rem !important;
+  font-size: 2.8rem !important;
+}
+
+.ant-table-tbody {
+  text-align: center !important;
+}
+
+.ant-table-cell {
+  text-align: center !important;
 }
