@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getAzanTimes(address: string) {
   const res = await axios.get(
-    `http://api.aladhan.com/v1/timingsByAddress?address=${address}`
+    `https://api.aladhan.com/v1/timingsByAddress?address=${address}`
   );
 
   if (!res.data) {
