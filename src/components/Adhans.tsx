@@ -41,7 +41,7 @@ const Adhans = () => {
         {
           name: "Sunrise",
           begins: moment(prayerTimes.Sunrise, ["HH:mm"]).format("hh:mm A"),
-          iqamah: "07:00 AM",
+          iqamah: "",
         },
         // { name: "Sunrise", begins: prayerTimes.Sunrise, iqamah: "14:00" },
         {
