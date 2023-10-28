@@ -64,13 +64,13 @@ const Adhans = () => {
           begins: moment(prayerTimes.Isha, ["HH:mm"]).format("hh:mm A"),
           iqamah: "08:30 PM",
         },
-        { name: "Jumuah", begins: "", iqamah: "" },
+        { name: "Jumuah", begins: "02:00 PM", iqamah: "" },
       ]);
     }
   }, [prayerTimes]);
 
   return (
-    <>
+    <div className="adhans">
       {prayerData.length > 0 ? (
         <Table dataSource={prayerData} pagination={false}>
           <Column title="Prayer" dataIndex="name" key="name" />
@@ -80,7 +80,7 @@ const Adhans = () => {
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 };
 

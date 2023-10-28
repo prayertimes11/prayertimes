@@ -1,11 +1,9 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
 }
 
 .adhans {
-  display: flex;
   justify-content: space-between;
   background-color: #0d1621;
   padding: 20px 20px 5px 20px;
@@ -13,6 +11,8 @@
   border-radius: 10px;
   font-size: 1.4rem;
   font-weight: bolder;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .bg {
