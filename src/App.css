@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.adhans {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0d1621;
+  padding: 20px 20px 5px 20px;
+  opacity: 0.8;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("./assets/bg.jpg");
+
+  /* Full height */
+  max-height: 100vh;
+  min-height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat !important;
+  background-clip: content-box;
+}
+
+th {
+  background-color: #0d1621 !important;
+  color: white !important;
+  font-size: 2.9rem !important;
+}
+
+.td {
+  color: #0d1621 !important;
+}
+
+.ant-table-tbody {
+  font-size: 2.9rem !important;
+}
