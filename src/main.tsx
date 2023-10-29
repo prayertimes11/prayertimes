@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import "raf/polyfill";
-import "core-js/actual/map";
-import "core-js/actual/set";
+import "core-js";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
